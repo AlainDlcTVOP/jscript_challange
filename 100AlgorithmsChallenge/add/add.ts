@@ -4,7 +4,15 @@ export function add(param1: number, param2: number): number {
 }
 
 export function add2(...param1: number[]): number {
-    return param1.reduce((add2, param1) => add2 + param1);
+    // return param1.reduce((add2, param1) => add2 + param1);
+    let total = 0;
+
+    param1.forEach((num) => {
+        total += num;
+    });
+    return total;
+
+
 }
 console.log(add(1, 2));
 console.log(add(3, 2));
