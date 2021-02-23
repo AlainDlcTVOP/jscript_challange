@@ -1,17 +1,20 @@
+import { add2 } from "../add/add";
+
 export function adjacentElementsProduct(inputArray: number[]): number {
 
-    let sumOfProduct = inputArray[0] * inputArray[1];
+    let largestProduct = inputArray[0] * inputArray[1];
 
-    for (let i = 1; i < inputArray.length - 1; i++) {
-        let product = inputArray[i] * inputArray[i + 1];
-
+    for (let i = 1; i < inputArray.length; i++) {
+        const product = inputArray[i] * inputArray[i - 1];
         console.log(product);
-
-        sumOfProduct = product ? product : product;
-        console.log(sumOfProduct);
+        largestProduct = largestProduct < product ? product : largestProduct;
     }
 
-    return sumOfProduct;
+
+    console.log(inputArray.length);
+
+
+    return largestProduct;
 
 }
 

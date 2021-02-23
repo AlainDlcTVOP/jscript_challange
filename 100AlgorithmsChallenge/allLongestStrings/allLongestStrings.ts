@@ -1,31 +1,27 @@
 export function allLongestStrings(inputArray: string[]): any[] {
 
     let longestString = 0;
-    const wordLength = [];
+    let wordLength = [];
 
     inputArray.forEach((word: string) => {
-
         longestString = longestString < word.length ? word.length : longestString;
-
+        console.log(longestString);
         console.log(word);
         console.log(word.length);
-        console.log(longestString);
     });
 
     inputArray.forEach((word: string) => {
+
         if (longestString === word.length) {
             wordLength.push(word);
-            console.log(word);
-            console.log(wordLength);
         }
+
     });
+    console.log(longestString);
 
 
+    console.log(wordLength);
     return wordLength;
-
-
-
-
 }
 
 console.log(allLongestStrings(["aba", "aa", "ad", "vcd", "aba"]));
