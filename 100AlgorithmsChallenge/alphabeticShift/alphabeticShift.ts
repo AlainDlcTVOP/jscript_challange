@@ -1,19 +1,24 @@
 export function alphabeticShift(inputString: string): any {
 
-    let newStr = [];
-    for (let i = 0; i < inputString.length; i++) {
-        // Increment each letter by 1 to get the next letter, push it into array
-        newStr.push(String.fromCharCode((inputString[i].charCodeAt(0) + 1)));
-        console.log(newStr.length);
-    }
-    /* 
-       After incrementing 'z' it becomes '}', need to handle this edge case
-       Turns array containing answer into a string
-       Handles 'z' edge case by using a RegEx to replace instances of '}' with 'a' 
-    */
-    let answer = newStr.join("").replace(/{/g, 'a');;
+    const alphabet: string[] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+        'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r'
+        , 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-    return answer;
+    const shiftedInput = inputString.split('');
+
+    console.log(shiftedInput);
+
+    for (let i = 0; i < shiftedInput.length; i++) {
+        let index = 0;
+
+        if (shiftedInput[i] !== 'z') {
+            index = alphabet.indexOf(shiftedInput[i]) + 1;
+            console.log(index);
+        }
+        shiftedInput[i] = alphabet[index];
+    }
+
+    return shiftedInput.join('');
 }
 
 console.log(alphabeticShift('crazy'));
