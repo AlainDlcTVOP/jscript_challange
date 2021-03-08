@@ -4,21 +4,20 @@ export function alphabeticShift(inputString: string): any {
         'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r'
         , 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-    const shiftedInput = inputString.split('');
+    const s = inputString.split('');
 
-    console.log(shiftedInput);
-
-    for (let i = 0; i < shiftedInput.length; i++) {
+    for (let i = 0; s.length; i++) {
         let index = 0;
-
-        if (shiftedInput[i] !== 'z') {
-            index = alphabet.indexOf(shiftedInput[i]) + 1;
-            console.log(index);
+        if (s[i] !== 'z') {
+            index = alphabet.indexOf(s[i]) + 1;
         }
-        shiftedInput[i] = alphabet[index];
+
+        s[i] = alphabet[index];
     }
 
-    return shiftedInput.join('');
+
+    return s.join('');
+
 }
 
 console.log(alphabeticShift('crazy'));
