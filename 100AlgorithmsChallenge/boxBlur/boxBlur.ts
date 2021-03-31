@@ -4,6 +4,7 @@ export function boxBlur(image: number[][]): number[][] {
 
     for (let y = 0; y < image.length - 2; y++) {
         const line = [];
+
         for (let x = 0; x < image[y].length - 2; x++) {
             let sum = 0;
             let count = 0;
@@ -19,8 +20,6 @@ export function boxBlur(image: number[][]): number[][] {
 
         res.push(line);
     }
-
-
 
 
     return res;
