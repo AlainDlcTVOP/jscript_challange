@@ -4,9 +4,11 @@ export function composeRanges(nums: number[]): string[] {
         return [];
     }
     const rangers: any[] = [{ start: nums[0], end: nums[0] }];
+
     for (let i = 1; i < nums.length; i++) {
         if (rangers[rangers.length - 1].end + 1 === nums[i]) {
             rangers[rangers.length - 1].end = nums[i];
+
         } else {
             rangers.push({ start: nums[i], end: nums[i] });
         }
@@ -21,9 +23,7 @@ export function composeRanges(nums: number[]): string[] {
     }
 
 
-
     return rangers;
-
 }
 
 console.log(composeRanges([-1, 0, 1, 2, 6, 7, 9]));
