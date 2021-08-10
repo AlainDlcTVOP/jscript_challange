@@ -19,8 +19,8 @@ export function sumAllPrimes(num: number): number {
     return primes.reduce((total, element) => { return total + element });
 }
 
-console.log(sumAllPrimes(5));
-//console.log(sumAllPrimes(977));
+console.log(sumAllPrimes(10));
+console.log(sumAllPrimes(977));
 
 /*
 How do we solve problems?
